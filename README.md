@@ -1,17 +1,37 @@
-# dessert-ui
-
-[![NPM version](https://img.shields.io/npm/v/dessert-ui.svg?style=flat)](https://npmjs.org/package/dessert-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/dessert-ui.svg?style=flat)](https://npmjs.org/package/dessert-ui)
+# Dessert UI
 
 A react library developed with dumi
 
-## Usage
+[![NPM version](https://img.shields.io/npm/v/dessert-ui.svg?style=flat)](https://npmjs.org/package/dessert-ui)
+[![NPM downloads](http://img.shields.io/npm/dm/dessert-ui.svg?style=flat)](https://npmjs.org/package/dessert-ui)
+![Codecov](https://img.shields.io/codecov/c/github/msumbur/dessert-ui)
+![LICENSE](https://img.shields.io/badge/npm_text-v0.0.1-blue)
 
-TODO
+## 📦 Install
 
-## Options
+```bash
+npm install antd
+```
 
-TODO
+```bash
+yarn add antd
+```
+
+```bash
+pnpm add antd
+```
+
+## 🔨 Usage
+
+```tsx
+import { Add } from 'dessert-ui/Icon';
+
+export default () => (
+  <>
+    <Add />
+  </>
+);
+```
 
 ## Development
 
@@ -37,7 +57,3 @@ $ yarn run docs:preview
 # check your project for potential problems
 $ yarn run doctor
 ```
-
-## LICENSE
-
-MIT
