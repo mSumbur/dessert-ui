@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, forwardRef } from 'react';
 
-import "./index.scss";
+import "./index.css";
 
 type BaseIconProps = {
     className?: string

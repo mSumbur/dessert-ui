@@ -4,7 +4,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import LocaleContext from './LocaleContext';
 import CalendarHeader from './Header';
 import CalendarContent from './Content';
-import "./index.scss";
+import "./index.css";
 
 export interface CalendarProps {
     defaultValue?: Dayjs

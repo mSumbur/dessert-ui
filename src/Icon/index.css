@@ -9,9 +9,9 @@
 }
 
 .icon {
-    display: inline-block;
+    display: inline-block;    
+}
 
-    &--spin {
-        animation: spin 1s linear infinite;
-    }
+.icon--spin {
+    animation: spin 1s linear infinite;
 }

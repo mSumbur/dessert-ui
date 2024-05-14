@@ -4,7 +4,10 @@ export default defineConfig({
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'Dessert UI',
-    logo: ''
+    logo: 'dessert.png',
+    socialLinks: {
+      github: 'https://github.com/mSumbur/dessert-ui',
+    },
   },  
   // base: '/dessert-ui/',
   // publicPath: '/dessert-ui/'

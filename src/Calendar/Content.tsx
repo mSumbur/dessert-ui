@@ -20,13 +20,33 @@ function getAllDays(date: Dayjs) {
     const daysInfoLength = 6 * 7
     const daysInfo: Array<{ date: Dayjs, currentMonth: boolean }> = new Array(daysInfoLength)
 
-    for (let i = 0; i < daysInfoLength; i++) {
-        const calcDate = startDate.subtract(day - i, 'day')
+    // for (let i = 0; i < daysInfoLength; i++) {
+    //     const calcDate = startDate.subtract(day - i, 'day')
+    //     daysInfo[i] = {
+    //         date: calcDate,
+    //         currentMonth: calcDate.month() == date.month()
+    //     }
+    // }
+
+    for (let i = 0; i < day; i++) {
         daysInfo[i] = {
-            date: calcDate,
-            currentMonth: calcDate.month() == date.month()
+            date: startDate.subtract(day - i, 'day'),
+            currentMonth: false
         }
     }
+
+    for (let i = day; i < daysInfo.length; i++) {
+        const calcDate = startDate.add(i - day, 'day');
+
+        daysInfo[i] = {
+            date: calcDate,
+            currentMonth: calcDate.month() === date.month()
+        }
+    }
+
+    console.log('works', daysInfo)
+
+    return daysInfo;
 
     return daysInfo
 }
@@ -45,11 +65,13 @@ export default function CalendarContent(props: CalendarContentProps) {
 
     return <>
         <div className='calendar__week'>
-            {weekList.map((week) => <div className='calendar__week__item' key={week}>{CalendarLocale.week[week]}</div>)}
+            {weekList.map((week, index) => <div className='calendar__week__item' key={week}>{CalendarLocale.week[week] + index}</div>)}
         </div>
         <div className='calendar__day'>
-            {dayList.map((item) => (
-                <div key={item.date.date()} className={`calendar__day__cell ${item.currentMonth ? 'calendar__day__cell--active' : ''}`} onClick={() => {
+            {dayList.map((item, index) => {
+                const { date } = item
+                const key = `${date.get('month')}${date.get('date')}${index}`
+                return <div key={key} className={`calendar__day__cell ${item.currentMonth ? 'calendar__day__cell--active' : ''}`} onClick={() => {
                     selectHandler?.(item.date)
                 }}>
                     {dateRender
@@ -64,7 +86,7 @@ export default function CalendarContent(props: CalendarContentProps) {
                             <div className='calendar__day__cell__extend'>{dateInnerContent?.(item.date)}</div>
                         </div>}
                 </div>
-            ))}
+            })}
         </div>
     </>
 }
