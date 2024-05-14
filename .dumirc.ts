@@ -6,6 +6,7 @@ export default defineConfig({
     name: 'Dessert UI',
     logo: ''
   },  
-  // base: '/dessert-ui/',
+  base: '/dessert-ui/',
+  publicPath: '/'
   // publicPath: '/dessert-ui/'
 });
