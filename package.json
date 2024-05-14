@@ -2,6 +2,11 @@
   "name": "dessert-ui",
   "version": "0.0.2",
   "description": "A react library developed with dumi",
+  "homepage": "https://dessertui.dvran.com",  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mSumbur/dessert-ui"
+  },
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
